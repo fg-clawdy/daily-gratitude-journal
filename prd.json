@@ -1,0 +1,197 @@
+{
+  "project": "daily-gratitude-journal",
+  "branchName": "main",
+  "description": "Daily gratitude journaling app - write what you're grateful for, view calendar history. Local-only, mobile-first, pastel theme.",
+  "userStories": [
+    {
+      "id": "ITEM-001",
+      "title": "Write Today's Gratitude Entry",
+      "description": "As a user, I want to write what I'm grateful for today so I can reflect on positive moments",
+      "acceptanceCriteria": [
+        "\"Today\" view displays current date prominently",
+        "Large text area (min 3 rows) for gratitude entry",
+        "Character limit: 500 characters with live counter",
+        "Counter shows remaining characters",
+        "Counter turns orange at 50 chars remaining, red at 10",
+        "Entry auto-saves on blur (no explicit save button needed)",
+        "Entry persists in localStorage",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-002",
+      "title": "View Past Entries in Calendar",
+      "description": "As a user, I want to see a calendar of my past entries so I can reflect on my gratitude journey",
+      "acceptanceCriteria": [
+        "Calendar view shows current month by default",
+        "Days with entries show filled dot indicator",
+        "Days without entries show empty state",
+        "Tap/click day to view that day's entry",
+        "Selected day shows entry in panel below calendar",
+        "Previous/next month navigation arrows",
+        "Swipe left/right changes months (mobile)",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-003",
+      "title": "Navigate Between Today and Calendar Views",
+      "description": "As a user, I want to easily switch between writing today's entry and viewing my calendar",
+      "acceptanceCriteria": [
+        "Bottom tab navigation with two tabs: \"Today\" and \"Calendar\"",
+        "Tab navigation always visible (fixed position)",
+        "Active tab highlighted with visual indicator",
+        "Tap tab to switch views instantly",
+        "Navigation state persists on reload (URL or localStorage)",
+        "Touch targets: 44x44px minimum (mobile accessibility)",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-004",
+      "title": "See Welcome Hints for New Users",
+      "description": "As a first-time user, I want helpful hints so I understand how to use the app",
+      "acceptanceCriteria": [
+        "Today view shows hint text when no entry exists: \"What are you grateful for today?\"",
+        "Calendar view shows empty state when no entries: \"Start writing to see your gratitude journey\"",
+        "Hints disappear once user has written first entry (Today) or has any entries (Calendar)",
+        "Hint text styled differently (lighter color, italic) from actual content",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-005",
+      "title": "Responsive Mobile-First Design",
+      "description": "As a mobile user, I want the app to look and work great on my phone",
+      "acceptanceCriteria": [
+        "Mobile viewport (375px-428px) is primary design target",
+        "All touch targets: 44x44px minimum",
+        "Text area easily tappable and fills most of screen",
+        "Calendar cells large enough for comfortable tapping",
+        "Tab navigation stays fixed at bottom (thumb-friendly)",
+        "Responsive layout works on tablet (768px+) and desktop (1024px+)",
+        "No horizontal scrolling on any viewport",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-006",
+      "title": "Visual Design with Pastel Theme",
+      "description": "As a user, I want a calming, visually pleasing interface that makes me feel good",
+      "acceptanceCriteria": [
+        "Pastel color palette: lavender (#E6E6FA), pink (#FFB6C1), mint (#98FB98)",
+        "Lavender as primary background color",
+        "Pink accents for active states and highlights",
+        "Mint for success indicators (dots on calendar)",
+        "Rounded corners on all UI elements (8px border radius minimum)",
+        "Subtle shadows for depth (4px blur, 10% opacity)",
+        "Custom font loaded (Quicksand or similar friendly rounded font)",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-007",
+      "title": "LocalStorage Data Persistence",
+      "description": "As a developer, I need entries to persist in localStorage so users don't lose data",
+      "acceptanceCriteria": [
+        "Entries stored in localStorage with key: `gratitude-entries`",
+        "Data structure: `{ \"YYYY-MM-DD\": \"entry text\" }`",
+        "localStorage limit handling: warn user if approaching 5MB limit",
+        "Data schema versioning for future migrations (`v1` key)",
+        "Auto-save on text area blur (debounced 500ms)",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-008",
+      "title": "Handle Empty States Gracefully",
+      "description": "As a user, I want helpful empty states when I have no data yet",
+      "acceptanceCriteria": [
+        "Today view with no entry: Shows placeholder text",
+        "Calendar view with no entries: Shows friendly message",
+        "Selected calendar day with no entry: Shows \"No entry for this day\"",
+        "Empty states visually distinct (lighter text, icons optional)",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-009",
+      "title": "Calendar Month Navigation",
+      "description": "As a user, I want to view entries from previous months",
+      "acceptanceCriteria": [
+        "Arrow buttons for previous/next month (desktop/tablet)",
+        "Swipe gestures for month navigation (mobile)",
+        "Current month displayed as \"Month YYYY\" (e.g., \"February 2026\")",
+        "Cannot navigate to future months (no entries possible)",
+        "Smooth transition between months (CSS animation optional)",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    },
+    {
+      "id": "ITEM-010",
+      "title": "Edit Existing Entries",
+      "description": "As a user, I want to edit past entries if I made a mistake or want to add more",
+      "acceptanceCriteria": [
+        "Clicking past day in calendar loads entry in text area (read-only initially)",
+        "\"Edit\" button appears when viewing past entry",
+        "Clicking \"Edit\" enables text area for editing",
+        "Auto-save on blur (same as Today view)",
+        "Can navigate back to Today after editing past entry",
+        "Typecheck passes",
+        "Verify in browser using webapp-testing skill"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "",
+      "awaitingClarification": false
+    }
+  ],
+  "security": "Local-only app with no backend: No authentication required (local-only data), no API endpoints to secure, no sensitive data transmitted over network, localStorage data accessible only to same origin, XSS prevention via React's built-in escaping. Input validation: Character limit enforced client-side (500 chars), HTML escaping handled by React (automatic). Browser security: localStorage scoped to domain (same-origin policy), no third-party scripts loaded, CSP headers configured.",
+  "mobile": "Touch interactions: All buttons/tabs 44x44px minimum touch target, text area large and easy to tap (full-width minus padding), calendar cells 48x48px minimum. Responsive layout: Primary design for 375px-428px (iPhone SE to Pro Max), no horizontal scrolling on any viewport, text area scales to fill available height. Performance: Static site (no server requests after initial load), auto-save debounced (reduce localStorage writes), calendar renders only visible month. Accessibility: Touch targets meet iOS/Android guidelines, color contrast meets WCAG AA standards, font sizes readable on mobile (18px minimum), tab navigation reachable with thumb on bottom of screen.",
+  "operations": "Deployment: Vercel (recommended) via GitHub integration, static export (no server-side rendering), CDN distribution. Environment variables: None required (local-only app). Build command: npm run build. Output directory: out/ (Next.js static export). Health check: N/A (static site, no backend), monitor via Vercel uptime monitoring. Monitoring: Vercel Analytics for page views (optional), Browser DevTools for client-side errors, localStorage usage monitoring (warn at 4MB of 5MB limit). Scaling: N/A (static site scales automatically via CDN). Maintenance: localStorage limit warning, browser compatibility testing (Chrome, Safari, Firefox latest 2 versions), data migration function if schema changes. Troubleshooting: localStorage full warning, data corruption validation with reset to empty state. Backup: N/A (local-only app, users can manually export data in future feature).",
+  "implementation": "Tech stack: Next.js 14+ App Router, TypeScript, Tailwind CSS, localStorage, Vercel deployment. File structure: src/app/ (layout, page, today/, calendar/), src/components/ (TodayView, CalendarView, TabNavigation, CharacterCounter), src/lib/storage.ts (localStorage helpers), src/types/index.ts. Data model: localStorage key 'gratitude-entries' with version 'v1' and entries object { 'YYYY-MM-DD': 'entry text' }. Key functions: saveEntry, getEntry, getAllEntries, getDatesWithEntries. Performance: Auto-save debounced 500ms, calendar renders only current month, localStorage limit check before write (~5MB), lazy load calendar view."
+}
